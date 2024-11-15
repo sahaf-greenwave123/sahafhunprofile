@@ -1,0 +1,34 @@
+.container {
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.dynamic-text {
+    display: inline-block;
+}
+
+.word {
+    position: absolute;
+    opacity: 0;
+    animation: fade 9s infinite;
+}
+
+.word:nth-child(1) {
+    animation-delay: 0s; /* Show first word immediately */
+}
+
+.word:nth-child(2) {
+    animation-delay: 3s; /* Show second word after 3 seconds */
+}
+
+.word:nth-child(3) {
+    animation-delay: 6s; /* Show third word after 6 seconds */
+}
+
+@keyframes fade {
+    0%, 20% { opacity: 1; } /* Fade in */
+    25%, 95% { opacity: 0; } /* Fade out */
+    100% { opacity: 0; } /* Ensure it stays hidden */
+}
